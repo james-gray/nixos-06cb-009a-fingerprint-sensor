@@ -11,7 +11,7 @@ fprintd.overrideAttrs ({ patches ? [], mesonFlags ? [], ... }: {
   patches = patches ++ [ ./Make-building-the-daemon-optional.patch ];
   mesonFlags = mesonFlags ++ [
     (lib.mesonBool "daemon" false)
-    (lib.mesonBool "pam" false)
+    (lib.mesonBool "pam" true)
     (lib.mesonBool "systemd" false)
   ];
 
